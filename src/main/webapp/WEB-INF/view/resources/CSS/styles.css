@@ -1,0 +1,458 @@
+body{
+    width: 100%;
+    overflow: hidden;
+    margin: 0px;
+    background-size: 105%;
+    background: url("../../images/main.jpg") no-repeat fixed;
+
+
+}
+section .mainText{
+    font-size: 101px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    top: 28%;
+    left: 8%;
+}
+section .mainText span{
+    font-size: 48px;
+    text-transform: none;
+    position: absolute;
+    top: 102%;
+}
+section article .regZone, section article .logZone{
+    position: absolute;
+    top: 14%;
+    left: 33%;
+    width: 33%;
+    height: 85%;
+    background-color: white;
+    z-index: 1;
+    filter: contrast(85%);
+
+    border-radius: 15px;
+}
+section article .regZone span, section article .lognZone span {
+    display: block;
+    text-align: center;
+    background-color: white;
+    opacity: 1;
+    border-radius: 15px;
+
+}
+section article .regZone span font,section article .logZone span font{
+    font-size: 34px;
+    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    top: 20%;
+}
+section article .logZone{
+    width: 26%;
+    height: 65%;
+    top: 20%;
+    left: 36%;
+}
+section article .logZone .user, section article .logZone .pass{
+    width: 77%;
+    margin-left: 10%;
+
+}
+section article .logZone span{
+    position: absolute;
+    top: 6%;
+    left: 36%;
+}
+article .logZone .loginFont{
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 11%;
+    margin-top: 4%;
+}
+form .fname, form .lname, form .email, form .username, form .password {
+    margin-top: 4%;
+    width: 42%;
+    height: 50px;
+    margin-left: 3.5%;
+    border-radius: 5px;
+    border: none;
+    opacity: 1;
+    background-color: #CCCCCC;
+    font-size: 16px;
+}
+form .email, form .username, form .password{
+    width: 91%;
+    position: relative;
+    margin-top: 4px;
+}
+form .create_acc, form .login{
+    width: 92.5%;
+    height: 48px;
+    position: relative;
+    left: 3.5%;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: bold;
+    margin-top: 8%;
+
+    background-color: #E39816;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 1s;
+}
+
+form .login, form .forgot{
+    position: absolute;
+    width: 65%;
+    height: 38px;
+    font-size: 20px;
+    left: 17%;
+    top: 62%;
+}
+form .forgot{
+    position: absolute;
+    top: 77%;
+    background-color: #CCCCCC;
+}
+
+form .create_acc:hover{
+    cursor: pointer;
+    background-color: #E8E326;
+    transition: background-color 1s;
+}
+form .forgot:hover{
+    background-color: #989898;
+}
+
+section article .logZone form .notRegistered{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    color:  black;
+    position: absolute;
+    top: 92%;
+    left: 18%;
+}
+
+
+.required {
+    color: red;
+    position: inherit;
+    margin-left: 10%;
+}
+.requiredfn{
+    margin-left: 5%;
+    float: left;
+}
+.requiredln{
+    margin-right: 15%;
+    float: right;
+
+}
+.place{
+    position: relative;
+    bottom: 20px;
+}
+
+
+input[type=text]{
+    padding-left: 2%;
+}
+input[type=email]{
+    padding-left: 2%;
+}
+input[type=password]{
+    padding-left: 2%;
+
+}
+.term_button{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 3.5%;
+}
+.agree_term{
+    position: absolute;
+    left: 8%;
+    background-color: transparent;
+    margin-top: 5%;
+}
+
+
+nav{
+    width: 64%;
+    height: 10%;
+    position: absolute;
+    left: 45%;
+    top: 4%;
+}
+
+
+nav .buttons{
+    font-size: 27px;
+    position: absolute;
+    bottom: 38%;
+}
+nav .buttons a, nav .buttons a:link, nav.buttons a:active, nav.buttons a:visited{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0px 20px;
+    text-transform: uppercase;
+    transition: color 1s;
+}
+nav .buttons a:hover{
+    color: #ECBF07;
+}
+
+
+ .icon{
+    position: relative;
+    width: 3%;
+    right: 2%;
+    top: 1px;
+}
+
+section .order{
+    position: absolute;
+    top: 145%;
+    width: 40%;
+    height: 35%;
+    background-color: #ECBF07;
+    color: #F1F1F1;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: none;
+    transition: background-color 1s;
+
+}
+
+section .order:hover{
+    cursor: pointer;
+    background-color: #E39816;
+
+}
+
+
+.instagram{
+    width: 3%;
+    position: absolute;
+    filter: contrast(170%);
+    top: 8%;
+    right: 19%;
+}
+
+.facebook{
+    position: absolute;
+    right: 15%;
+    width: 3.45%;
+    top: -2%;
+    filter: contrast(140%);
+}
+.facebookLogged{
+right: -4%;
+top: 6%;
+}
+.instagramLogged{
+right: 1%;
+}
+
+header {
+    position: absolute;
+    left: 5%;
+    top: 5.5%;
+}
+header img{
+    position: absolute;
+    width: 38%;
+    top: -13%;
+    float: right;
+    left: 105%;
+}
+header font{
+    font-size: 35px;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+header a:active, header a:hover, header a:visited, header:link, header a{
+    text-decoration: none;
+    color: inherit;
+}
+
+section article .aboutUs, section article .orderProduct{
+    overflow: auto;
+}
+
+section article .aboutUs, section article .orderProduct{
+    position: absolute;
+    width: 55%;
+    height: 82%;
+    top: 15%;
+    left: 22%;
+    background-color: white;
+    filter: contrast(85%);
+    opacity: 0.9;
+    border-radius: 20px;
+}
+section article .aboutUs p{
+    font-size: 16px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    text-align: left;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+section article .aboutUs .welcome, section article .orderProduct .welcome {
+    font-size: 23px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5%;
+}
+.aboutUs hr{
+    width: 80%;
+    height: 0.1%;
+    background-color: black;
+}
+.aboutUs{
+    text-align: center;
+}
+
+section article .product{
+    width: 84%;
+    height: 35%;
+    margin-left: 8%;
+}
+section article .product  .img {
+    position: absolute;
+    width: 25%;
+    height: 30%;
+    overflow: hidden;
+    border-radius: 10px;
+    float: left;
+}
+section article .product span img{
+    width: 120%;
+    border-radius: 10px;
+    float: left;
+
+}
+
+.description{
+    position: absolute;
+    width: 41%;
+    color: black;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 33%;
+    margin-top: 5%;
+    float: left;
+}
+.addButton{
+    position: relative;
+    left: 86%;
+    top: 31%;
+}
+
+.infoProfile{
+    margin-left: 0%;
+}
+.infoProfile .info{
+    font-size: 18px;
+    padding: 1.5%;
+    border: 1.5px solid;
+    border-radius: 5px;
+    margin-top: 4%;
+
+}
+.infoProfile .info .personalInfo{
+    width: 50%;
+    height: 24px;
+    background-color: #DEDEDE;
+    margin-bottom: 1px;
+    border-radius: 5px;
+
+}
+.infoProfile .info .personal{
+    position: absolute;
+    width: 70%;
+    left: 38%;
+}
+.save{
+    position: relative;
+    background-color: #E8E326;
+    width: 15%;
+    height: 40px;
+    margin-left: 43%;
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 1s;
+    cursor: pointer;
+
+}
+.save a{
+    position: relative;
+    top: 12%;
+}
+.save a:link, .save a:visited, .save a:active .save a:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+
+}
+.save:hover {
+background-color: #ECBF07;
+}
+input[type="checkbox" i] {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    cursor: pointer;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 9px;
+    padding: initial;
+    border: initial;
+}
+
+input[type="text" i]{
+    font-size: 18px;
+    color: black;
+    opacity: 1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1.5px;
+}
+
+section article .orderProduct .totalDisplay{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    display: inline;
+    bottom: 3%;
+    left: 35%;
+}
+
+section article .orderProduct .total .totalJS{
+    font-size: 20px;
+}
+
+.profileError{
+    float: left;
+    margin-top: -5px;
+}

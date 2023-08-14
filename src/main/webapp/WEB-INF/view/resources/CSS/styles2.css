@@ -1,0 +1,783 @@
+@media only screen AND (max-width: 1450px){
+    body{
+        background: url("../../images/main2.jpg");
+    }
+    nav{
+        width: 70%;
+        height: 10%;
+        position: absolute;
+        left: 28%;
+        top: 8%;
+    }
+    
+    
+    nav .buttons{
+        font-size: 33px;
+        position: absolute;
+        bottom: 74%;
+    }
+    nav .buttons a, nav .buttons a:link, nav.buttons a:active, nav.buttons a:visited{
+        padding: 0px 15px;
+    }
+    .instagram{
+        width: 4.0%;
+        position: absolute;
+        filter: contrast(170%);
+        top: 4%;
+        right: 5%;
+    }
+    
+    .facebook{
+        position: absolute;
+        right: 0%;
+        width: 4.5%;
+        top: -1%;
+        filter: contrast(140%);
+    }
+    section article .orderProduct{
+        position: absolute;
+        width: 77%;
+        height: 82%;
+        top: 20%;
+        left: 10%;
+        overflow: auto;
+
+    }
+
+
+    section article .aboutUs {
+        width: 65%;
+        left: 18%;
+    }
+    section article .regZone{
+        width: 60%;
+        left: 20%;
+        height: auto;
+    }
+    .agree_term {
+        bottom: 8.5%;
+        background-color: transparent;
+    }
+    
+}
+@media only screen AND (max-width: 1200px){
+    body{
+        background: url("../../images/main3.jpg");
+
+    }
+    .scroll{
+        overflow: auto;
+        background-attachment: fixed;
+
+    }
+    nav{
+        width: 95%;
+        height: 10%;
+        position: absolute;
+        left: 15%;
+        top: 22%;
+    }
+    
+    
+    nav .buttons{
+        font-size: 40px;
+        position: absolute;
+        left: 5%;
+    }
+    nav .buttons a, nav .buttons a:link, nav.buttons a:active, nav.buttons a:visited{
+        padding: 0px 12px;
+    }
+    .instagram{
+        width: 4.5%;
+        filter: contrast(170%);
+        position: absolute;
+        top: 130%;
+        right: 56%;
+    }
+    
+    .facebook{
+        right: 62%;
+        width: 4.7%;
+        position: absolute;
+
+        top: 130%;
+        filter: contrast(140%);
+    }
+    .icon {
+        position: relative;
+        width: 3%;
+        right: 0%;
+        top: 4px;
+    }
+    header {
+        position: absolute;
+        top: 4%;
+        left: 40%;
+    }
+    header img{
+        position: absolute;
+        width: 52%;
+        bottom: 15%;
+        left: 110%;
+    }
+    header font{
+        font-size: 44px;
+        position: relative;
+        top: 15px;
+    }
+    section .mainText{
+        top: 37%;
+        left: 8%;
+    }
+    section .mainText span{
+        font-size: 48px;
+        text-transform: none;
+        position: absolute;
+        top: 102%;
+    }
+
+    section article .aboutUs{
+        position: absolute;
+        width: 75%;
+        height: 160%;
+        top: 37%;
+        left: 12%;
+    }
+
+    section article .aboutUs{
+        overflow: unset;
+    }
+
+    section article .logZone{
+        width: 56%;
+        height: 65%;
+        top: 34%;
+        left: 21%;
+        bottom: 2%;
+    }
+    section article .logZone .user, section article .logZone .pass{
+        width: 77%;
+        margin-left: 10%;
+    
+    }
+    section article .logZone span{
+        position: absolute;
+        top: 6%;
+        left: 36%;
+    }
+    article .logZone .loginFont{
+        position: absolute;
+        margin-left: 11%;
+        margin-top: 2%;
+    }
+    form .create_acc, form .login{
+        transition: background-color 1s;
+        position: absolute;
+        margin-top: 2%;
+        top: 25px;
+    }
+    form .forgot{
+        position: absolute;
+        top: 78%;
+        background-color: #CCCCCC;
+    }
+    .smallLogin{
+        position: relative;
+        left: 25%;
+    }
+    .addButton{
+        position: relative;
+        left: 85%;
+        top: 15%;
+    }
+    .orderProduct .addButton{
+        top: 30%;
+    }
+    section article .orderProduct{
+        width: 75%;
+        top: 40%;
+        left: 14%;
+
+    }
+    .infoProfile .info{
+        font-size: 19px;
+        height: 50px;
+    
+    }
+    .infoProfile .info .personalInfo{
+        width: 50%;
+        height: 24px;
+    
+    }
+    .infoProfile .info .personal{
+        position: absolute;
+        width: 75%;
+        left: 38%;
+    }   
+     section article .regZone{
+        width: 60%;
+        left: 20%;
+        top: 40%;
+        height: auto;
+    }
+    .agree_term {
+        bottom: 8%;
+        font-size: 20px;
+    }
+
+
+
+}
+@media only screen AND (max-width: 1000px){
+    body{
+        background: url("../../images/main3.jpg");
+    }
+    .scroll{
+        overflow: auto;
+        background-attachment: fixed;
+
+    }
+    nav{
+        width: 98%;
+        height: 10%;
+        position: absolute;
+        left: 18%;
+        top: 20%;
+    }
+    
+    
+    nav .buttons{
+        font-size: 35px;
+        position: absolute;
+        left: 5%;
+    }
+    nav .buttons a, nav .buttons a:link, nav.buttons a:active, nav.buttons a:visited{
+        padding: 0px 8px;
+    }
+    .instagram{
+        width: 6%;
+        filter: contrast(170%);
+        position: absolute;
+        top: 125%;
+        right: 55%;
+    }
+    
+    .facebook{
+        right: 45%;
+        width: 7%;
+        position: absolute;
+
+        top: 115%;
+        filter: contrast(140%);
+    }
+    .icon {
+        position: relative;
+        width: 3%;
+        right: 0%;
+        top: 4px;
+    }
+    header {
+        position: absolute;
+        top: 0%;
+        left: 40%;
+    }
+
+    section .mainText{
+        top: 34%;
+        left: 8%;
+    }
+    section article .logZone{
+        width: 72%;
+        height: 65%;
+        top: 34%;
+        left: 15%;
+    }
+    .smallLogin{
+        position: relative;
+        left: 25%;
+    }
+    section article .aboutUs {
+        width: 95%;
+        left: 2.5%;
+    }
+    .infoProfile .info {
+        font-size: 24px;
+        height: 55px;
+    }
+    .save{
+        width: 25%;
+        height: 50px;
+        font-size: 25px;
+    }
+    section article .orderProduct{
+        width: 75%;
+    }
+    .infoProfile .info{
+        font-size: 22px;
+        height: 50px;
+    
+    }
+    .infoProfile .info .personalInfo{
+        width: 50%;
+        height: 24px;
+    
+    }
+    .infoProfile .info .personal{
+        position: absolute;
+        width: 75%;
+        left: 38%;
+    }   
+     section article .regZone{
+        width: 85%;
+        left: 7.5%;
+        top: 40%;
+        height: auto;
+    }
+    section article .regZone span, section article .lognZone span {
+        background-color: transparent;
+    }
+    .agree_term {
+        bottom: 6.5%;
+        font-size: 20px;
+    }
+
+}
+@media only screen AND (max-width: 845px){
+    body{
+        background: url("../../images/main3.jpg");
+        overflow: auto;
+    }
+    .scroll{
+        overflow: auto;
+        background-attachment: fixed;
+
+    }
+    nav{
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        left: 27%;
+        top: 34%;
+        text-align: center;
+    }
+    
+    
+    nav .buttons{
+        font-size: 45px;
+        position: absolute;
+        left: 5%;
+        display: block;
+    }
+
+    .instagram{
+        width: 20%;
+        filter: contrast(170%);
+        position: absolute;
+        top: 106%;
+        right: 55%;
+    }
+    
+    .facebook{
+        right: 30%;
+        width: 22%;
+        position: absolute;
+
+        top: 105%;
+        filter: contrast(140%);
+    }
+    .icon {
+        position: relative;
+        width: 20%;
+        right: 0%;
+        top: 4px;
+    }
+    header {
+        position: absolute;
+        top: 3%;
+        left: 25%;
+    }
+    header img{
+        position: absolute;
+        width: 55%;
+        bottom: 15%;
+        left: 110%;
+    }
+    header font{
+        font-size: 51px;
+        position: relative;
+        top: 35px;
+    }
+
+    section .mainText{
+        top: 80%;
+        left: 8%;
+        font-size: 95px;
+    }
+    section article .aboutUs{
+        position: absolute;
+        width: 85%;
+        height: 160%;
+        top: 77%;
+        left: 7%;
+    }
+
+    section article .aboutUs{
+        overflow: unset;
+    }
+    .smallLogin{
+        position: relative;
+        left: 25%;
+    }
+    input[type=button]{
+        margin-top: 50px;
+        
+    }
+    section article .logZone{
+        width: 85%;
+        height: 65%;
+        top: 78%;
+        left: 9%;
+    }
+    form .create_acc, form .login{
+        transition: background-color 1s;
+        position: relative;
+        margin-top: 1%;
+    }
+    form .forgot{
+        position: absolute;
+        top: 78%;
+    }
+    section article .product {
+        width: 84%;
+        height: 100%;
+        margin-left: 8%;
+    }
+    section article .orderProduct{
+        position: absolute;
+        width: 90%;
+        height: 82%;
+        top: 80%;
+        left: 12%;
+        overflow: auto;
+    }
+    section article .orderProduct .product .img{
+          width: 60%;
+            height: 45%;
+            left: 20%;
+      }
+      section article .orderProduct .description{
+        top: 45%;
+        position: relative;
+        right: 2%;
+        font-size: 18px;
+      }
+      section article .orderProduct .addButton{
+        top: 81%;
+        left: -38%;
+        font-size: 18px;
+      }
+      input[type=checkbox]{
+        width: 80px;
+        height: 80px;
+        margin-left: 1%;
+    
+    }
+    .infoProfile .info{
+        font-size: 19px;
+        height: 50px;
+    
+    }
+    .infoProfile .info .personalInfo{
+        width: 50%;
+        height: 24px;
+        background-color: #DEDEDE;
+        margin-bottom: 1px;
+        border-radius: 5px;
+    
+    }
+    .infoProfile .info .personal{
+        position: absolute;
+        width: 90%;
+        left: 38%;
+    }
+    section article .aboutUs {
+        width: 100%;
+        left: 0%;
+    }
+    section article .orderProduct{
+        width: 90%;
+        left: 5%;
+    }
+    .infoProfile .info{
+        font-size: 22px;
+        height: 50px;
+    
+    }
+    .infoProfile .info .personalInfo{
+        width: 50%;
+        height: 24px;
+    
+    }
+    .infoProfile .info .personal{
+        position: absolute;
+        width: 75%;
+        left: 38%;
+    }   
+     section article .regZone{
+        width: 95%;
+        left: 2.5%;
+        top: 80%;
+        height: auto;
+    }
+    form .fname, form .lname, form .email, form .username, form .password {
+        margin-top: 5%;
+        width: 90%;
+    }
+    section article .regZone span, section article .lognZone span {
+        background-color: transparent;
+    }
+    .agree_term {
+        bottom: 0%;
+    }
+
+
+}
+@media only screen AND (max-width: 650px){
+    body{
+        background: url("../../images/main4.jpg");
+        overflow: auto;
+    }
+    .scroll{
+        overflow: auto;
+        background-attachment: fixed;
+
+    }
+    nav{
+        width: 70%;
+        height: 51%;
+        position: absolute;
+        left: 10%;
+        top: 15%;
+        text-align: center;
+
+    }
+    
+    
+    nav .buttons{
+        font-size: 45px;
+        bottom: 0px;
+        display: block;
+        padding: 0px 0px;
+        transition: 1s color;
+        margin-left: 0%;
+
+    }
+    nav .buttons a.phone{
+        display: block;
+        width: 160%;
+        background-color: #ECBF07;
+        border-radius: 20px;
+    }
+
+    nav .buttons a.phoneButton{
+        position: relative;
+        margin-top: 5%;
+    }
+
+    nav .buttons a:hover{
+        color: wheat;
+    }
+    .instagram{
+        width: 35%;
+        filter: contrast(170%);
+        position: absolute;
+        top: 110%;
+        right: -10%;
+    }
+    
+    .facebook{
+        right: -10%;
+        width: 37%;
+        position: absolute;
+
+        top: 143%;
+        filter: contrast(140%);
+    }
+    .icon {
+        display: none;
+    }
+    header {
+        position: absolute;
+        top: 3%;
+        left: 22%;
+    }
+    header img{
+        position: absolute;
+        width: 55%;
+        bottom: 15%;
+        left: 88%;
+    }
+    header font{
+        font-size: 55px;
+        position: relative;
+        top: 35px;
+        left: -16%;
+    }
+
+    section .mainText{
+        top: 100%;
+        left: 8%;
+        font-size: 90px;
+    }
+    section article .aboutUs{
+        position: absolute;
+        width: 100%;
+        height: 160%;
+        top: 100%;
+        left: 0px;
+    }
+
+    section article .aboutUs{
+        overflow: unset;
+    }
+    input[type=button]{
+        margin-top: 50px;
+        width: 90%;
+        font-size: 30px;
+        
+    }
+    section article .logZone{
+        width: 100%;
+        height: 72%;
+        top: 100%;
+        left: 0%;
+    }
+    form .create_acc, form .login{
+        transition: background-color 1s;
+        position: relative;
+        margin-top: 5%;
+        left: 5%;
+        height: 60px;
+    }
+    section article .logZone .user, section article .logZone .pass {
+        width: 95%;
+        margin-left: 2.5%;
+        height: 60px;
+    }
+    form .forgot{
+        position: absolute;
+        top: 79%;
+        left: 5%;
+    }
+    article .logZone .loginFont {
+        position: absolute;
+        margin-left: 3%;
+        margin-top: 4%;
+    }
+    section article .orderProduct{
+        position: absolute;
+        width: 100%;
+        height: 82%;
+        top: 100%;
+        left: 0%;
+        overflow: auto;
+    }
+    section article .orderProduct .welcome{
+        font-size: 40px;
+    }
+    section article .orderProduct .product .img{
+        width: 65%;
+        height: 40%;
+        left: 18%;
+    }
+    section article .orderProduct .description{
+        top: 42%;
+        position: relative;
+        right: 2%;
+        font-size: 18px;
+      }
+      section article .orderProduct .addButton{
+        top: 82%;
+        left: -38%;
+        font-size: 18px;
+        position: relative;
+      }
+      section article .product {
+        width: 84%;
+        height: 95%;
+        margin-left: 8%;
+    }
+      input[type=checkbox]{
+        width: 80px;
+        height: 80px;
+        margin-left: 0%;
+    
+    }
+    section article .aboutUs {
+        width: 100%;
+        left: 0%;
+    }
+    .infoProfile .info {
+        font-size: 23px;
+        height: 55px;
+        width: 95%;
+        left: 2.5%;
+    }
+    .save{
+        width: 25%;
+        height: 50px;
+        font-size: 25px;
+    }
+    section article .aboutUs p {
+        margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 0%;
+    }
+    .infoProfile .info .personal {
+        position: absolute;
+        width: 100%;
+        left: 45%;
+    }
+    section article .regZone{
+        width: 100%;
+        left: 0%;
+        top: 100%;
+        height: auto;
+    }
+    section article .logZone form .notRegistered{
+        top: 95%;
+    }
+    .agree_term {
+        bottom: 3.5%;
+        font-size: 16px;
+    }
+    
+}
+@media only screen AND (max-width: 480px){
+    nav .buttons a.phone {
+        width: 120%;
+        font-size: 38px;
+    }
+    .scroll{
+        overflow: auto;
+        background-attachment: fixed;
+
+    }
+    .instagram {
+        right: 20%;
+    }
+    .facebook {
+        right: 20%;
+    }
+    header img {
+        position: absolute;
+        width: 55%;
+        bottom: 0%;
+        left: 8%;
+        top: 140%;
+        width: 45%;
+    }
+    header font {
+        font-size: 50px;
+    }
+}
