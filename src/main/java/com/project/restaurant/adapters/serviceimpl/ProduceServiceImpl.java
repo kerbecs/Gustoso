@@ -17,7 +17,7 @@ public class ProduceServiceImpl implements ProduceService {
     @Override
     public Produce getProduceById(int id) {
         return produceRepository.findById(id).orElseThrow(() ->
-                new NoSuchElementException(String.format("Produce with id % does not exists",id)));
+                new NoSuchElementException(String.format("Produce with id %d does not exists",id)));
     }
 
     @Override
@@ -26,7 +26,15 @@ public class ProduceServiceImpl implements ProduceService {
     }
 
     @Override
-    public Produce deleteProduceById() {
-        return null;
+    public void deleteProduceById(int id) {
+        produceRepository.deleteById(id);
     }
+
+    @Override
+    public Produce addProduce(Produce produce) {
+        return produceRepository.save(produce);
+    }
+
+
+
 }

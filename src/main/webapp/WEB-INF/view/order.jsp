@@ -54,7 +54,8 @@
         <form:form method="post" action="makeOrder" modelAttribute="order">
         <div class="orderProduct">
             <p class="welcome">Order Food <br>Online</p>
-                <c:forEach var="produce" items="${produces}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            <c:forEach var="produce" items="${produces}">
             <p class="product">
                 <span class="img"><img src="/images/${produce.image}"></span>
                 <span class="description">

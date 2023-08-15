@@ -61,6 +61,7 @@
                 <br><br>
                 <font class="loginFont">Username</font>
                 <br>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 <input type="text" name="username" class="fname user" required placeholder="Enter your username" id="username"/>
                 <br>
                 <font class="loginFont">Password</font>

@@ -57,6 +57,7 @@
             <hr>
             <form:form action="/updateUser" method="post" modelAttribute="user">
         <div class="infoProfile">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             <form:errors path="firstName" class="required profileError "/>
             <p class="info">First Name <span class="personal"><form:input path="firstName" class="personalInfo"/></span></p>
             <form:errors path="lastName" class="required profileError "/>

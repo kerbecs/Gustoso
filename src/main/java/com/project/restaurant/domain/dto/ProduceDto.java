@@ -14,18 +14,16 @@ import lombok.*;
 public class ProduceDto {
     private Integer id;
 
-    @Pattern(regexp = "^[A-Za-z0-9\\s\'\\-]{2,25}$")
+    @Pattern(regexp = "^[A-Za-z0-9\\s\'\\-]{2,25}$", message = "{produce.invalid.name.message}")
     private String name;
 
-    @Size(max = 150)
+    @Size(max = 150, message = "{produce.invalid.ingredients.message}")
     private String ingredients;
 
-    @Pattern(regexp = "")
-    @Min(value = 0)
+    @Min(value = 0, message = "Can't be negative")
     private String weight;
 
-    @Min(value = 0)
-    @Pattern(regexp = "")
+    @Min(value = 0, message = "Can't be negative")
     private Double price;
 
     private String image;

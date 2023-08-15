@@ -53,6 +53,7 @@
         <div class="regZone">
             <span><font>Register</font></span>
             <form:form action="register" method="post" modelAttribute="userRegister" cssStyle="margin-bottom: 20px">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 <form:input path="userDescriptionDto.firstName" class="fname" placeholder="First Name" id="FN"/>
                 <form:input path="userDescriptionDto.lastName" class="lname" placeholder="Last Name" id="LN"/>
                 <form:errors path="userDescriptionDto.firstName" class="required requiredfn" id="req1"/>

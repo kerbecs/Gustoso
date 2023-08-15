@@ -6,8 +6,11 @@ import com.project.restaurant.domain.repository.UserDescriptionRepository;
 import com.project.restaurant.domain.repository.UserRepository;
 import com.project.restaurant.domain.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +35,11 @@ public class UserServiceImpl implements UserService {
         user.setUserDescription(userDescriptionRepository.save(user.getUserDescription()));
 
         return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
     @Override

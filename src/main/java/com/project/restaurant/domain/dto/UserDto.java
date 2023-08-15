@@ -20,6 +20,7 @@ public class UserDto {
 
     @Pattern(regexp = "^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$",groups = {UserRegister.class}, message = "{password.invalid.message}")
     @Size(min = 0, max = 60,groups = {UserRegister.class}, message = "{password.invalid.message}")
+    @JsonIgnore
     private String password;
 
     private Integer isActive;

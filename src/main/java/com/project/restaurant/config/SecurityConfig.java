@@ -50,6 +50,7 @@ public class SecurityConfig {
                         log.logoutUrl("/logout"))
                 .exceptionHandling(e -> e.accessDeniedPage("/noPermission"))
                 .httpBasic(Customizer.withDefaults())
+                .csrf(csrf -> csrf.disable())
                 .build();
     }
 
