@@ -9,12 +9,11 @@ import com.project.restaurant.domain.facade.MvcFacade;
 import com.project.restaurant.domain.mapstruct.*;
 import com.project.restaurant.domain.repository.UserRepository;
 import com.project.restaurant.domain.roles.Roles;
-import com.project.restaurant.domain.service.OrderService;
-import com.project.restaurant.domain.service.ProduceService;
-import com.project.restaurant.domain.service.RoleService;
-import com.project.restaurant.domain.service.UserService;
+import com.project.restaurant.domain.service.*;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,6 +29,11 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MvcFacadeImpl implements MvcFacade {
+    @Value("${spring.rabbitmq.exchange1.name}")
+    private String exchange;
+
+    @Value("${spring.rabbitmq.routing_key1.name}")
+    private String routingKey;
     private final ProduceMapper produceMapper;
     private final UserMapper userMapper;
     private final UserRegisterMapper userRegisterMapper;
@@ -43,7 +47,7 @@ public class MvcFacadeImpl implements MvcFacade {
     private final RoleService roleService;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private final EntityManager entityManager;
+    private final RabbitTemplate rabbitTemplate;
 
 
     @Override
@@ -87,7 +91,10 @@ public class MvcFacadeImpl implements MvcFacade {
         setDefaultRoleForNewUser(user);
         encryptPassword(user);
 
-        return userMapper.userToUserDto(userService.save(user));
+        user = userService.save(user);
+        rabbitTemplate.convertAndSend(exchange,routingKey,user);
+
+        return userMapper.userToUserDto(user);
     }
 
     @Override
@@ -101,6 +108,7 @@ public class MvcFacadeImpl implements MvcFacade {
             encryptPassword(user);
             userRepository.modifyUserPassword(user.getPassword(),user.getUsername());
         }
+
 
         return userProfileMapper.userToUserProfileDto(user);
     }
@@ -119,6 +127,7 @@ public class MvcFacadeImpl implements MvcFacade {
             bindingResult.addError(objectError1);
         }
     }
+
 
     private List<Produce> getProduceList(Integer[] producesId) {
         List<Produce> produceList = new ArrayList<>();

@@ -18,4 +18,5 @@ public interface MvcFacade {
     UserProfileDto getUserProfileByUsername(String username);
 
     void checkPasswords(String password1, String password2, BindingResult bindingResult);
+
 }

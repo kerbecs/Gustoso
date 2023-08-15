@@ -9,4 +9,6 @@ public interface UserService {
     User getUserByUsername(String username);
     User save(User user);
     void updateUser(User user);
+
+    void activateUser(String username);
 }

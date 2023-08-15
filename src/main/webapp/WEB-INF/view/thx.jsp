@@ -1,20 +1,26 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: user
+  Date: 14.11.2022
+  Time: 16:31
+  To change this template use File | Settings | File Templates.
+--%>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <html>
 
 <head>
     <title>Gustoso</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/CSS/styles.css"/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/CSS/styles2.css"/>"/>
-
-</head>
-<body class="scroll">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/CSS/styles2.css"/>"/></head>
+<body>
 
 
 <nav>
@@ -50,42 +56,18 @@
 
 <section>
     <article>
-        <div class="logZone">
-            <span><font class="smallLogin">LogIn</font></span>
-            <form:form method="post" action="login">
-                <br><br><br>
-                <c:if test="${param.error != null}" >
-                    <br>
-                    <font class="required" id="requiredUsername">Invalid Username and/or password</font>
-                </c:if>
-                <br><br>
-                <font class="loginFont">Username</font>
-                <br>
-                <input type="text" name="username" class="fname user" required placeholder="Enter your username" id="username"/>
-                <br>
-                <font class="loginFont">Password</font>
-                <br>
-                <input type="password" name="password" class="lname pass" required placeholder="Enter your password" id="password"/>
-                <input type="submit" class="create_acc login" value="Login"/>
-                <br>
-                <br>
-                <br>
-                <input type="button" class="create_acc login forgot" value="Reset Password "/>
-                <br>
-                <div class="notRegistered">
-                Don't have an account? <a href="<c:url value="/registerPage"/>">Register now</a>
-                </div>
-
-            </form:form>
+        <div class="aboutUs">
+            <p class="welcome">Order performed</p>
+            <hr>
+            <p>Your order has been successfully performed.</p>
+            <p>Thank you for choosing us.</p>
+            <p>If you have problems with your order, contact us.</p>
         </div>
     </article>
-
-    <article>
-
-    </article>
-
+    <div class="main">
+        <img src="<c:url value="/images/main.jpg"/>" alt="Img"/>
+    </div>
 </section>
-
 
 <footer>
 </footer>

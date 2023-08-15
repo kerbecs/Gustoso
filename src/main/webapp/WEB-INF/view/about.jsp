@@ -1,39 +1,53 @@
 <!DOCTYPE HTML>
 
 <html>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <head>
     <title>Gustoso</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-        <link rel="stylesheet" type="text/css" href="../CSS/styles.css"/>
-        <link rel="stylesheet" type="text/css" href="../CSS/styles2.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/CSS/styles.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/CSS/styles2.css"/>"/>
 
         <script>
-            alert('This page was updated on 28.11.2022. Some information could be not actual.')
+            alert('This page was updated on 15.08.2023. Some information could be not actual.')
         </script>
 
 </head>
 <body class="scroll">
 
 
-    <nav >
-        <div class="buttons">
-          <a href="../index.html" class="phone ">Home</a>
-          <a href="about.html" class="phone phoneButton">About Us</a>
-          <a href="order.jsp" class="phone phoneButton">Order</a><img src="../Images/buy.png" class="icon"/>
-          <a href="logIn.html" class="phone phoneButton">Log in</a>
-          <a href="" class="phone"><img src="../Images/facebook.png" class="facebook"/></a>
-          <a href="" class="phone"><img src="../Images/instagram.png" class="instagram"/></a>
-        </div>
-    
-    </nav>
+<nav>
+    <div class="buttons">
+        <a href="<c:url value="/"/>" class="phone ">Home</a>
+        <a href="<c:url value="/aboutUs"/>" class="phone phoneButton">About Us</a>
+        <a href="<c:url value="/orderPage"/>" class="phone phoneButton">Order</a><img src="/images/buy.png" class="icon"/>
+        <security:authorize access="!isAuthenticated()">
+            <a href="<c:url value="/loginPage"/>" class="phone phoneButton">Log in</a>
+        </security:authorize>
+        <security:authorize access="isAuthenticated()">
+            <a href="<c:url value="/profile"/>" class="phone phoneButton">Profile</a>
+        </security:authorize>
+        <security:authorize access="isAuthenticated()">
+            <form:form action="logout" method="post" cssStyle="display: inline-block;">
+                <a href="javascript:;" onclick="parentNode.submit()" class="phone phoneButton">Logout</a>
+            </form:form>
+        </security:authorize>
+        <a href="" class="phone"><img src="/images/facebook.png" class="facebook"/></a>
+        <a href="" class="phone"><img src="/images/instagram.png" class="instagram"/></a>
+    </div>
+
+</nav>
 
 
-<header> 
-    <a href="../index.html">
-    <font>Gustoso</font>
-<img src="../Images/logo.png"/>
-</a>
+<header>
+    <a href="<c:url value="/"/>">
+        <font>Gustoso</font>
+        <img src="/images/logo.png"/>
+    </a>
 </header>
 
 

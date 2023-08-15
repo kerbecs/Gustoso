@@ -58,7 +58,7 @@ public class MvcController {
 
         mvcFacade.saveUser(userRegisterDto);
 
-        return "redirect:/";
+        return "activated";
     }
 
     @GetMapping("/orderPage")
@@ -75,7 +75,7 @@ public class MvcController {
 
         mvcFacade.makeOrder(principal.getName(), userOrderDto);
 
-        return "index";
+        return "thx";
     }
 
     @GetMapping("/profile")
@@ -95,4 +95,25 @@ public class MvcController {
 
         return "profile";
     }
+    @GetMapping("/aboutUs")
+    @PreAuthorize(value = "permitAll()")
+    public String aboutUsPage(){
+        return "about";
+    }
+    @GetMapping("/error")
+    @PreAuthorize(value = "permitAll()")
+    public String errorPage(){
+        return "error";
+    }
+    @GetMapping("/registered")
+    @PreAuthorize(value = "permitAll()")
+    public String registeredPage(){
+        return "registered";
+    }
+    @GetMapping("/noPermission")
+    @PreAuthorize(value = "permitAll()")
+    public String noPermissionPage(){
+        return "noPermission";
+    }
+
 }

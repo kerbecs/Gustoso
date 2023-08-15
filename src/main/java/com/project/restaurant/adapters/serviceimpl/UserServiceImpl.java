@@ -40,4 +40,9 @@ public class UserServiceImpl implements UserService {
 
         userRepository.save(user);
     }
+
+    @Override
+    public void activateUser(String username) {
+        userRepository.activateUser(username);
+    }
 }

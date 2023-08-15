@@ -21,7 +21,7 @@
 <nav>
     <div class="buttons">
         <a href="<c:url value="/"/>" class="phone ">Home</a>
-        <a href="/images/about.html" class="phone phoneButton">About Us</a>
+        <a href="<c:url value="/aboutUs"/>" class="phone phoneButton">About Us</a>
         <a href="<c:url value="/orderPage"/>" class="phone phoneButton">Order</a><img src="/images/buy.png" class="icon"/>
         <security:authorize access="!isAuthenticated()">
             <a href="<c:url value="/loginPage"/>" class="phone phoneButton">Log in</a>
@@ -77,7 +77,19 @@
             <div class='totalDisplay'>Total producst: <span id='totalCount'></span></div>
             <br>
             <div class='totalDisplay'>Total to pay: <span id='totalPay'></span> $</div>
-            <input type="submit" value="Sumbit">
+            <br>
+            <br>
+            <input type="submit" value="Sumbit" style="
+                    width: 15%;
+                    height: 7%;
+                    background-color: yellow;
+                    border-radius: 8px;
+                    border: 1px solid gray;
+                    font-family: Verdana,serif;
+                    cursor: pointer;
+                    font-size: 15pt;
+                    font-weight: 800;
+                    margin-left: 38%;"/>
             </form:form>
         </div>
     </article>

@@ -22,7 +22,7 @@
 <nav>
     <div class="buttons">
         <a href="<c:url value="/"/>" class="phone ">Home</a>
-        <a href="/images/about.html" class="phone phoneButton">About Us</a>
+        <a href="<c:url value="/aboutUs"/>" class="phone phoneButton">About Us</a>
         <a href="<c:url value="/orderPage"/>" class="phone phoneButton">Order</a><img src="/images/buy.png" class="icon"/>
         <security:authorize access="!isAuthenticated()">
             <a href="<c:url value="/loginPage"/>" class="phone phoneButton">Log in</a>
@@ -80,7 +80,8 @@
     border-radius: 0px;
     border: 0px;
     font: inherit;
-    color: inherit;"
+    color: inherit;
+    cursor: pointer"
             />
             <br>
             <br>
