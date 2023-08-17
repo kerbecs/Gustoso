@@ -1,10 +1,10 @@
 package com.project.restaurant.domain.dto;
 
 import com.project.restaurant.adapters.validationGroup.UserModifyProfile;
-import com.project.restaurant.adapters.validationGroup.UserRegister;
 import com.project.restaurant.domain.annotation.ModifyPassword;
 import com.project.restaurant.domain.entity.Role;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.List;
@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @ToString
+@EqualsAndHashCode
 public class UserProfileDto {
     private Integer id;
     private String username;
@@ -27,6 +28,7 @@ public class UserProfileDto {
     private String lastName;
 
     @ModifyPassword(message = "{password.invalid.message}")
+    @EqualsAndHashCode.Exclude
     private String password;
 
     private String email;
@@ -37,7 +39,7 @@ public class UserProfileDto {
     @Pattern(regexp = "^([A-Za-z0-9\\s\\\\\'\\-]{5,70})$", message = "{address.invalid.message}")
     private String address;
 
-    @Size(min = 0, max = 100, groups = {UserModifyProfile.class}, message = "{userDescription.tooLong.message}")
+    @Size(max = 100, groups = {UserModifyProfile.class}, message = "{userDescription.tooLong.message}")
     private String userDescription;
 
     @Pattern(regexp = "^([A-Za-z\\-_ \']{0,20})$", message = "{job.invalid.message}")

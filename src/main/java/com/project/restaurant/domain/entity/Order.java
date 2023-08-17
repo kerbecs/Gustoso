@@ -28,7 +28,7 @@ public class Order {
     private LocalDateTime date;
 
     @ManyToOne
-    @JoinColumn(name = "user_id",nullable = false,updatable = false)
+    @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private User user;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

@@ -1,4 +1,4 @@
-USE restaurant;
+
 CREATE TABLE token(
                       id int PRIMARY KEY AUTO_INCREMENT,
                       confirmation_token varchar(36) NOT NULL UNIQUE,

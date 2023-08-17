@@ -13,12 +13,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
+@EqualsAndHashCode
 public class OrderDto {
+    @EqualsAndHashCode.Exclude
     private Integer id;
     @Min(value = 0)
     private Double cost;
 
     @PastOrPresent
+    @EqualsAndHashCode.Exclude
     private LocalDateTime date;
 
     @NotNull

@@ -17,6 +17,7 @@ public abstract class UserMapper {
         return User.builder()
                 .userDescription(userDescriptionMapper.userDescriptionDtoToUserDescription(userDto.getUserDescriptionDto()))
                 .username(userDto.getUsername())
+                .password(userDto.getPassword())
                 .isActive(userDto.getIsActive())
                 .id(userDto.getId())
                 .build();
@@ -28,6 +29,7 @@ public abstract class UserMapper {
                 .userDescriptionDto(userDescriptionMapper.userDescriptionToUserDescriptionDto(user.getUserDescription()))
                 .role(getHigherRole(user.getRoleList()))
                 .username(user.getUsername())
+                .password(user.getPassword())
                 .isActive(user.getIsActive())
                 .id(user.getId())
                 .build();

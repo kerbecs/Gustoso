@@ -10,9 +10,9 @@ public class ModifyPasswordValidator implements ConstraintValidator<ModifyPasswo
 
     @Override
     public boolean isValid(String password, ConstraintValidatorContext constraintValidatorContext) {
-        if(password == null)
+        if (password == null)
             return true;
-        if(password.isEmpty())
+        if (password.isEmpty())
             return true;
         Pattern pattern = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,60}$");
         Matcher matcher = pattern.matcher(password);

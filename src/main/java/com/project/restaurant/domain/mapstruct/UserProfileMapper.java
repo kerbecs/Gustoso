@@ -1,16 +1,14 @@
 package com.project.restaurant.domain.mapstruct;
 
-import com.project.restaurant.domain.dto.UserDescriptionDto;
 import com.project.restaurant.domain.dto.UserProfileDto;
 import com.project.restaurant.domain.entity.User;
 import com.project.restaurant.domain.entity.UserDescription;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface UserProfileMapper {
 
-    default User userProfileDtoToUser(UserProfileDto userProfileDto){
+    default User userProfileDtoToUser(UserProfileDto userProfileDto) {
         UserDescription userDescription = UserDescription.builder()
                 .description(userProfileDto.getUserDescription())
                 .email(userProfileDto.getEmail())
@@ -32,7 +30,7 @@ public interface UserProfileMapper {
                 .build();
     }
 
-    default UserProfileDto userToUserProfileDto(User user){
+    default UserProfileDto userToUserProfileDto(User user) {
         return UserProfileDto.builder()
                 .id(user.getId())
                 .firstName(user.getUserDescription().getFirstName())
@@ -46,6 +44,7 @@ public interface UserProfileMapper {
                 .isActive(user.getIsActive())
                 .descriptionId(user.getUserDescription().getId())
                 .username(user.getUsername())
+                .password(user.getPassword())
                 .roleList(user.getRoleList())
                 .build();
     }

@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface OrderFacade {
     List<OrderDto> getAllOrders();
+
     OrderDto getOrderById(int id);
+
     List<OrderDto> getOrdersByUserId(int id);
 }

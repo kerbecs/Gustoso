@@ -13,11 +13,15 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface Unique {
     String value() default "";
+
     String message() default "";
+
     String table() default "";
+
     String column() default "";
 
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 
 }

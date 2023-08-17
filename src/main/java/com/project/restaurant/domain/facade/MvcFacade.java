@@ -1,16 +1,17 @@
 package com.project.restaurant.domain.facade;
 
 import com.project.restaurant.domain.dto.*;
-import com.project.restaurant.domain.entity.Order;
 import org.springframework.validation.BindingResult;
 
 import java.util.List;
 
 public interface MvcFacade {
     List<ProduceDto> getAllProduces();
+
     OrderDto makeOrder(String username, UserOrderDto userOrderDto);
 
     UserDto getUserByUsername(String username);
+
     UserDto saveUser(UserRegisterDto userDto);
 
     UserProfileDto saveUser(UserProfileDto userProfileDto);

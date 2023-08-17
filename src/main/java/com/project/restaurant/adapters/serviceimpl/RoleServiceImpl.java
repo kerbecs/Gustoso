@@ -6,6 +6,7 @@ import com.project.restaurant.domain.repository.RoleRepository;
 import com.project.restaurant.domain.roles.Roles;
 import com.project.restaurant.domain.service.RoleService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,9 +15,10 @@ public class RoleServiceImpl implements RoleService {
     private final RoleRepository roleRepository;
 
     @Override
+    @Cacheable("roles")
     public Role getRole(Roles role) {
         return roleRepository.findByRole(role).orElseThrow(() ->
-            new NoSuchElementException("Role "+role.toString() + " does not exists")
+                new NoSuchElementException("Role " + role.toString() + " does not exists")
         );
     }
 }

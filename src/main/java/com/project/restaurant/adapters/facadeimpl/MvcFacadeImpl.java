@@ -9,18 +9,18 @@ import com.project.restaurant.domain.facade.MvcFacade;
 import com.project.restaurant.domain.mapstruct.*;
 import com.project.restaurant.domain.repository.UserRepository;
 import com.project.restaurant.domain.roles.Roles;
-import com.project.restaurant.domain.service.*;
-import jakarta.persistence.EntityManager;
+import com.project.restaurant.domain.service.OrderService;
+import com.project.restaurant.domain.service.ProduceService;
+import com.project.restaurant.domain.service.RoleService;
+import com.project.restaurant.domain.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -62,15 +62,14 @@ public class MvcFacadeImpl implements MvcFacade {
     @Transactional
     public OrderDto makeOrder(String username, UserOrderDto userOrderDto) {
         User user = userService.getUserByUsername(username);
-        Order order ;
+        Order order;
 
-        try{
-            order = createOrder(user,userOrderDto);
+        try {
+            order = createOrder(user, userOrderDto);
 
             orderService.save(order);
 
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
 
@@ -92,7 +91,7 @@ public class MvcFacadeImpl implements MvcFacade {
         encryptPassword(user);
 
         user = userService.save(user);
-        rabbitTemplate.convertAndSend(exchange,routingKey,user);
+        rabbitTemplate.convertAndSend(exchange, routingKey, user);
 
         return userMapper.userToUserDto(user);
     }
@@ -104,9 +103,9 @@ public class MvcFacadeImpl implements MvcFacade {
 
         user = userService.save(user);
 
-        if(userProfileDto.getPassword() != null && !userProfileDto.getPassword().isEmpty()){
+        if (userProfileDto.getPassword() != null && !userProfileDto.getPassword().isEmpty()) {
             encryptPassword(user);
-            userRepository.modifyUserPassword(user.getPassword(),user.getUsername());
+            userRepository.modifyUserPassword(user.getPassword(), user.getUsername());
         }
 
 
@@ -122,8 +121,8 @@ public class MvcFacadeImpl implements MvcFacade {
 
     @Override
     public void checkPasswords(String password1, String password2, BindingResult bindingResult) {
-        if(!password1.equals(password2)){
-            FieldError objectError1 = new FieldError("userRegister","password","Password should be the same");
+        if (!password1.equals(password2)) {
+            FieldError objectError1 = new FieldError("userRegister", "password", "Password should be the same");
             bindingResult.addError(objectError1);
         }
     }
@@ -139,11 +138,11 @@ public class MvcFacadeImpl implements MvcFacade {
 
     }
 
-    private Order createOrder(User user,UserOrderDto userOrderDto) {
+    private Order createOrder(User user, UserOrderDto userOrderDto) {
         Order order = new Order();
         List<Produce> produceList = getProduceList(userOrderDto.getOrderedProduceList());
         double cost = countOrderCost(produceList);
-        List<OrderProduce> orderProduceList = createOrderProduceList(produceList,order);
+        List<OrderProduce> orderProduceList = createOrderProduceList(produceList, order);
 
 
         order.setCost(cost);
@@ -168,10 +167,12 @@ public class MvcFacadeImpl implements MvcFacade {
                 .mapToDouble(Produce::getPrice)
                 .sum();
     }
-    private void setDefaultRoleForNewUser(User user){
+
+    private void setDefaultRoleForNewUser(User user) {
         user.setRoleList(List.of(roleService.getRole(Roles.MEMBER)));
     }
-    private void encryptPassword(User user){
+
+    private void encryptPassword(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
     }
 }

@@ -23,7 +23,7 @@ public class UserDescription {
     @Column(nullable = false, name = "lastname")
     private String lastName;
 
-    @Column(nullable = false,unique = true, updatable = false)
+    @Column(nullable = false, unique = true, updatable = false)
     private String email;
 
     @Column(nullable = false)

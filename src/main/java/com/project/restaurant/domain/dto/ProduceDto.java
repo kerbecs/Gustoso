@@ -1,6 +1,5 @@
 package com.project.restaurant.domain.dto;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -11,7 +10,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
+@EqualsAndHashCode
 public class ProduceDto {
+    @EqualsAndHashCode.Exclude
     private Integer id;
 
     @Pattern(regexp = "^[A-Za-z0-9\\s\'\\-]{2,25}$", message = "{produce.invalid.name.message}")

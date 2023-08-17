@@ -1,4 +1,3 @@
-USE restaurant;
 
 delimiter |
 CREATE TRIGGER update_user_order

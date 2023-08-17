@@ -31,8 +31,8 @@ public class OrderProduce {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    private static class OrderProduceId implements Serializable {
-        @ManyToOne
+    public static class OrderProduceId implements Serializable {
+        @ManyToOne(cascade = CascadeType.REMOVE)
         @JoinColumn(name = "order_id")
         private Order order;
 
@@ -40,6 +40,7 @@ public class OrderProduce {
         @JoinColumn(name = "produce_id")
         private Produce produce;
     }
+
     @Column(nullable = false)
     private Double cost;
 
@@ -49,7 +50,7 @@ public class OrderProduce {
         this.produce = produce;
         this.cost = cost;
 
-        orderProduceId = new OrderProduceId(order,produce);
+        orderProduceId = new OrderProduceId(order, produce);
     }
 
 }

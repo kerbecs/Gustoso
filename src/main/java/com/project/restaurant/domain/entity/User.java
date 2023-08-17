@@ -2,7 +2,6 @@ package com.project.restaurant.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Immutable;
 
 import java.util.List;
 

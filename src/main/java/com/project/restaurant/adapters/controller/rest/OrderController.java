@@ -20,18 +20,19 @@ public class OrderController {
 
     @GetMapping
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<List<OrderDto>> getAllOrders(){
+    public ResponseEntity<List<OrderDto>> getAllOrders() {
         return ResponseEntity.ok(orderFacade.getAllOrders());
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<OrderDto> getOrderById(@PathVariable("id") int id){
+    public ResponseEntity<OrderDto> getOrderById(@PathVariable("id") int id) {
         return ResponseEntity.ok(orderFacade.getOrderById(id));
     }
+
     @GetMapping("/users/{userId}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<List<OrderDto>> getOrdersByUserId(@PathVariable("userId") int userId){
+    public ResponseEntity<List<OrderDto>> getOrdersByUserId(@PathVariable("userId") int userId) {
         return ResponseEntity.ok(orderFacade.getOrdersByUserId(userId));
     }
 }

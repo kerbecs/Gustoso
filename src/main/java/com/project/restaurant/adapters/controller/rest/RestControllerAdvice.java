@@ -16,7 +16,7 @@ import java.util.Map;
 @ControllerAdvice
 public class RestControllerAdvice {
     @ExceptionHandler(NoSuchElementException.class)
-    public ResponseEntity<ErrorBody> noSuchElementExceptionHandler(NoSuchElementException e, WebRequest webRequest){
+    public ResponseEntity<ErrorBody> noSuchElementExceptionHandler(NoSuchElementException e, WebRequest webRequest) {
         ErrorBody errorBody = ErrorBody.builder()
                 .path(webRequest.getDescription(false))
                 .status(HttpStatus.NOT_FOUND.value())
@@ -26,8 +26,9 @@ public class RestControllerAdvice {
 
         return new ResponseEntity<>(errorBody, HttpStatus.NOT_FOUND);
     }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Map<String, String>> validationFailed(MethodArgumentNotValidException e){
+    public ResponseEntity<Map<String, String>> validationFailed(MethodArgumentNotValidException e) {
         Map<String, String> map = new HashMap<>();
 
         e.getBindingResult()
@@ -36,9 +37,9 @@ public class RestControllerAdvice {
                     String field = ((FieldError) err).getField();
                     String message = err.getDefaultMessage();
 
-                    map.put(field,message);
+                    map.put(field, message);
                 });
 
-        return new ResponseEntity<>(map,HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(map, HttpStatus.BAD_REQUEST);
     }
 }

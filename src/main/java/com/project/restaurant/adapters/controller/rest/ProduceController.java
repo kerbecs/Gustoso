@@ -19,22 +19,25 @@ public class ProduceController {
 
     @GetMapping
     @PreAuthorize("hasAuthority('MEMBER')")
-    public ResponseEntity<List<ProduceDto>> getAllProduces(){
+    public ResponseEntity<List<ProduceDto>> getAllProduces() {
         return ResponseEntity.ok(produceFacade.getAllProduces());
     }
+
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('MEMBER')")
-    public ResponseEntity<ProduceDto> getProduceById(@PathVariable int id){
+    public ResponseEntity<ProduceDto> getProduceById(@PathVariable int id) {
         return ResponseEntity.ok(produceFacade.getProduceById(id));
     }
+
     @PostMapping
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<ProduceDto> addProduce(@RequestBody @Valid ProduceDto produceDto){
+    public ResponseEntity<ProduceDto> addProduce(@RequestBody @Valid ProduceDto produceDto) {
         return new ResponseEntity<>(produceFacade.addProduce(produceDto), HttpStatus.CREATED);
     }
+
     @PutMapping
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<ProduceDto> updateProduce(@RequestBody @Valid ProduceDto produceDto){
-        return new ResponseEntity<>(produceFacade.updateProduce(produceDto),HttpStatus.CREATED);
+    public ResponseEntity<ProduceDto> updateProduce(@RequestBody @Valid ProduceDto produceDto) {
+        return new ResponseEntity<>(produceFacade.updateProduce(produceDto), HttpStatus.CREATED);
     }
 }

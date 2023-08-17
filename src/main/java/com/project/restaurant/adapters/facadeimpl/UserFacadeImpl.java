@@ -14,6 +14,7 @@ import java.util.List;
 public class UserFacadeImpl implements UserFacade {
     private final UserService userService;
     private final UserMapper userMapper;
+
     @Override
     public List<UserDto> getAllUsers() {
         return userService.getAllUsers()

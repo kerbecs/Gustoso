@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface UserFacade {
     List<UserDto> getAllUsers();
+
     UserDto getUserByUsername(String username);
 
 }

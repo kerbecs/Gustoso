@@ -14,8 +14,8 @@ public class UserActivateController {
 
     @GetMapping("/confirm-email")
     @PreAuthorize(value = "permitAll()")
-    public String confirmUserEmail(@RequestParam("id") String token){
-        if(!userActivationFacade.activateUserByToken(token))
+    public String confirmUserEmail(@RequestParam("id") String token) {
+        if (!userActivationFacade.activateUserByToken(token))
             return "invalidToken";
         return "registered";
     }

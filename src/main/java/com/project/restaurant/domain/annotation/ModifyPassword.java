@@ -13,8 +13,10 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface ModifyPassword {
     String value() default "";
+
     String message() default "";
 
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

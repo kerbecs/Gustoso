@@ -1,30 +1,28 @@
 package com.project.restaurant.adapters.controller;
 
-import com.project.restaurant.adapters.validationGroup.UserModifyProfile;
 import com.project.restaurant.adapters.validationGroup.UserRegister;
-import com.project.restaurant.domain.dto.UserDto;
 import com.project.restaurant.domain.dto.UserOrderDto;
 import com.project.restaurant.domain.dto.UserProfileDto;
 import com.project.restaurant.domain.dto.UserRegisterDto;
-import com.project.restaurant.domain.entity.User;
 import com.project.restaurant.domain.facade.MvcFacade;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.security.Principal;
 
 @Controller
 @RequiredArgsConstructor
-@SessionAttributes(value = {"order","user"})
+@SessionAttributes(value = {"order", "user"})
 public class MvcController {
     private final ApplicationContext applicationContext;
     private final MvcFacade mvcFacade;
@@ -52,7 +50,7 @@ public class MvcController {
     @PostMapping("/register")
     @PreAuthorize(value = "permitAll()")
     public String registerNewUser(@ModelAttribute("userRegister") @Validated(value = {UserRegister.class}) UserRegisterDto userRegisterDto, BindingResult bindingResult) {
-        mvcFacade.checkPasswords(userRegisterDto.getPassword(),userRegisterDto.getRepeatPassword(),bindingResult);
+        mvcFacade.checkPasswords(userRegisterDto.getPassword(), userRegisterDto.getRepeatPassword(), bindingResult);
 
         if (bindingResult.hasErrors())
             return "register";
@@ -88,32 +86,37 @@ public class MvcController {
 
         return "profile";
     }
+
     @PostMapping("/updateUser")
     @PreAuthorize(value = "isAuthenticated()")
-    public String updateProfile(@ModelAttribute("user") @Valid UserProfileDto userProfileDto, BindingResult bindingResult){
-        if(!bindingResult.hasErrors())
-             mvcFacade.saveUser(userProfileDto);
+    public String updateProfile(@ModelAttribute("user") @Valid UserProfileDto userProfileDto, BindingResult bindingResult) {
+        if (!bindingResult.hasErrors())
+            mvcFacade.saveUser(userProfileDto);
 
         return "profile";
     }
+
     @GetMapping("/aboutUs")
     @PreAuthorize(value = "permitAll()")
-    public String aboutUsPage(){
+    public String aboutUsPage() {
         return "about";
     }
+
     @GetMapping("/error")
     @PreAuthorize(value = "permitAll()")
-    public String errorPage(){
+    public String errorPage() {
         return "error";
     }
+
     @GetMapping("/registered")
     @PreAuthorize(value = "permitAll()")
-    public String registeredPage(){
+    public String registeredPage() {
         return "registered";
     }
+
     @GetMapping("/noPermission")
     @PreAuthorize(value = "permitAll()")
-    public String noPermissionPage(){
+    public String noPermissionPage() {
         return "noPermission";
     }
 
