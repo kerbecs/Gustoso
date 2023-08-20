@@ -1,0 +1,44 @@
+
+services:
+  webapp:
+    container_name: webapp
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      public_network:
+    depends_on:
+      - mysql_production
+      - mysql_test
+      - rabbitmq
+    restart: on-failure
+
+  mysql_test:
+    container_name: restaurant
+    image: mysql
+    environment:
+      MYSQL_DATABASE: restaurant
+      MYSQL_ROOT_PASSWORD: Frb2eshox!
+    networks:
+      public_network:
+  mysql_production:
+    container_name: mysql_production
+    image: mysql
+    environment:
+      MYSQL_DATABASE: restaurant
+      MYSQL_ROOT_PASSWORD: Frb2eshox!
+    networks:
+      public_network:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      public_network:
+
+networks:
+  public_network:

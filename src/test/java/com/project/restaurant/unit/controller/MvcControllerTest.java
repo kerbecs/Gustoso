@@ -50,7 +50,7 @@ public class MvcControllerTest {
         BindingResult bindingResult = mock();
 
         when(bindingResult.hasErrors()).thenReturn(false);
-        assertThat(mvcController.registerNewUser(userRegisterDto, bindingResult)).isEqualTo("activated");
+        assertThat(mvcController.registerNewUser(userRegisterDto, bindingResult)).isEqualTo("registered");
     }
 
     @Test

@@ -57,7 +57,7 @@ public class MvcController {
 
         mvcFacade.saveUser(userRegisterDto);
 
-        return "activated";
+        return "registered";
     }
 
     @GetMapping("/orderPage")
